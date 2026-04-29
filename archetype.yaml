@@ -1,0 +1,14 @@
+---
+description: "Project — prefix + suffix name prompts"
+summary: >
+  Optional convenience library for archetypes whose name has a
+  prefix + suffix shape (e.g., `widget-service`, `widget-library`).
+  Prompts for prefix_name and an optional suffix_name and derives
+  project_name. Suffix behavior is parent-configurable — supply a
+  curated option list via suffix_options, or leave unset for free
+  text. Skip this library entirely if your project name is free-form.
+authors: ["Jimmie Fulton <jimmie.fulton@gmail.com>"]
+tags: ["library", "prompts", "project"]
+
+requires:
+  archetect: "3.0.0"
