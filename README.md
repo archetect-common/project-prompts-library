@@ -125,6 +125,36 @@ catalog:
       suffix_default: "service"
 ```
 
+## Usage — `catalog.render()` one-shot
+
+Skip `library: true` when you just need the project context keys without the
+two-phase API:
+
+```yaml
+# parent archetype.yaml
+catalog:
+  project:
+    source: "https://github.com/archetect-common/project-prompts-library.git#v1"
+```
+
+```lua
+-- parent archetype.lua
+context:merge(catalog.render("project", context))
+-- context now has prefix_name, suffix_name, project_name (+ case variants)
+```
+
+Pre-set `prefix_name` / `suffix_name` before calling `catalog.render()` to skip
+the interactive prompts. Pass catalog-level `answers:` for non-interactive runs:
+
+```yaml
+catalog:
+  project:
+    source: "..."
+    answers:
+      suffix_options: ["service", "library", "cli"]
+      suffix_default: "service"
+```
+
 ## Usage — standalone
 
 ```sh
